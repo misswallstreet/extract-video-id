@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, jsonify, send_file
+from flask import Flask, render_template, request, jsonify, send_file, send_from_directory
 import requests
 from bs4 import BeautifulSoup
 import re
@@ -17,6 +17,12 @@ new_filename = ""
 
 app = Flask(__name__)
 
+
+# Load favicon
+@app.route('/favicon.ico')
+def favicon():
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                          'favicon.ico',mimetype='image/vnd.microsoft.icon')
 
 # Load dictionary from JSON file
 def load_from_json(filename='channel_data.json'):
