@@ -53,7 +53,7 @@ def sanitize_channel_name(name):
 
 @app.route('/')
 def index():
-    return render_template('/api/index.html')
+    return render_template('index.html')
 
 
 @app.route('/get_channel_id', methods=['POST'])
