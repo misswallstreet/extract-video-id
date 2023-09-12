@@ -4,13 +4,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const confirmationDiv = document.getElementById("confirmation");  // Create a div in your HTML with this id to show the confirmation message
 
 
-//// Initialize a text area to hold the channel IDs
-//const channelIDTextArea = document.createElement("textarea");
-//channelIDTextArea.rows = 10;
-//channelIDTextArea.cols = 50;
-//channelIDTextArea.id = "channelIDs";
-//document.body.appendChild(channelIDTextArea);
-
 // Function to append a channel ID to the text area
 function appendChannelID(channelID) {
     const existingIDs = channelIDTextArea.value.split('\n');
@@ -19,15 +12,7 @@ function appendChannelID(channelID) {
     }
 }
 
-// Modify existing form submission logic to append channel ID to text area
-form.addEventListener("submit", function(event) {
-    // Existing form submission logic here...
 
-    // Append channel ID to text area if it exists
-    if (data.channel_id) {
-        appendChannelID(data.channel_id);
-    }
-});
 form.addEventListener("submit", function(event) {
         event.preventDefault();
         const url = document.getElementById("url").value;
